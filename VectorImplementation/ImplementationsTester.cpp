@@ -10,6 +10,7 @@
 #include "SMStaticHashMap.h"
 #include <vector>
 #include <algorithm>  
+#include "SMBinarySearchTree.h"
 
 using namespace std;
 
@@ -51,7 +52,6 @@ void testVector() {
     SMVector vector;
 
     cout << "isEmpty: " << vector.isEmpty() << endl;
-
 
     vector.printContents();
 
@@ -282,9 +282,64 @@ void testHashMap() {
     cout << "Value for 346: " << map.get(346) <<  endl;
 }
 
+void testBinarySearchTree() {
+
+    SMBinarySearchTree bst(10);
+ 
+    bst.printOrdered();
+
+    bst.insert(8);
+    bst.insert(1);
+    bst.insert(63);
+    bst.insert(18);
+    bst.insert(83);
+    bst.insert(45);
+
+    cout << "Total number of nodes: " << bst.getNodeCount() << endl;
+
+    bst.printOrdered();
+
+    bst.printPostOrder();
+    bst.printPreOrder();
+    bst.printLevelOrder();
+
+    cout << "Exists 45: " << bst.isInTree(45) << endl;
+
+    cout << "Exists 9: " << bst.isInTree(9) << endl;
+
+    bst.deleteValue(45); //no child
+    bst.deleteValue(8); // one child left
+    bst.deleteValue(63); // two children
+
+    bst.insert(2);
+
+    bst.deleteValue(1);//one child right
+
+    cout << "Exists 45: " << bst.isInTree(45) << endl;
+
+    bst.printOrdered();
+
+    cout << "Height of tree: " << bst.getHeight() << endl;
+
+    cout << "Minimum value: " << bst.getMin() << endl; 
+
+    cout << "Maximum value: " << bst.getMax() << endl;
+
+    bst.insert(5);
+    bst.insert(8);
+    bst.insert(15);
+    bst.insert(13);
+
+    cout << "Successor of 8: " << bst.getSuccessor(8) << endl;
+    cout << "Successor of 10: " << bst.getSuccessor(10) << endl;
+
+    bst.printOrdered();
+
+}
+
 int main()
 {
-    testHashMap();
+    testBinarySearchTree();
 }
 
 

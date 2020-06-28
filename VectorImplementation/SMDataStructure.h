@@ -19,6 +19,5 @@ public:
 	virtual void printContents() = 0;
 	virtual int getFront() = 0;
 	virtual int getBack() = 0;
-
 };
 

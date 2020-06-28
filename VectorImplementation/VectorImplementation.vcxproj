@@ -155,6 +155,8 @@
     <ClCompile Include="SMListNode.cpp" />
     <ClCompile Include="SMDynamicQueue.cpp" />
     <ClCompile Include="SMStack.cpp" />
+    <ClCompile Include="SMBinarySearchTree.cpp" />
+    <ClCompile Include="SMTreeNode.cpp" />
     <ClCompile Include="SMVector.cpp" />
     <ClCompile Include="ImplementationsTester.cpp" />
   </ItemGroup>
@@ -168,6 +170,8 @@
     <ClInclude Include="SMListNode.h" />
     <ClInclude Include="SMDynamicQueue.h" />
     <ClInclude Include="SMStack.h" />
+    <ClInclude Include="SMBinarySearchTree.h" />
+    <ClInclude Include="SMTreeNode.h" />
     <ClInclude Include="SMVector.h" />
   </ItemGroup>
   <ItemGroup>
