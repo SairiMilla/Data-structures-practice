@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="SMDataStructure.cpp" />
     <ClCompile Include="SMFixedQueue.cpp" />
+    <ClCompile Include="SMMaxHeap.cpp" />
     <ClCompile Include="SMStaticHashMap.cpp" />
     <ClCompile Include="SMHashMapElement.cpp" />
     <ClCompile Include="SMList.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="SMDataStructure.h" />
     <ClInclude Include="SMFixedQueue.h" />
+    <ClInclude Include="SMMaxHeap.h" />
     <ClInclude Include="SMStaticHashMap.h" />
     <ClInclude Include="SMHashMapElement.h" />
     <ClInclude Include="SMList.h" />

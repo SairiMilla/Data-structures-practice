@@ -11,6 +11,7 @@
 #include <vector>
 #include <algorithm>  
 #include "SMBinarySearchTree.h"
+#include "SMMaxHeap.h"
 
 using namespace std;
 
@@ -46,6 +47,14 @@ string parenthesisBalance(string s) {
     }
 
     return s;
+}
+
+void printArray(int* arr, int size) {
+    cout << "[";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << ", ";
+    }
+    cout << "]" << endl;
 }
 
 void testVector() {
@@ -337,9 +346,81 @@ void testBinarySearchTree() {
 
 }
 
+void testMaxHeap() {
+    SMMaxHeap heap(10);
+
+    cout << "Is it empty? " << heap.isEmpty() << endl;
+    cout << "Size: " << heap.getSize() << endl;
+
+    heap.insert(6);
+    heap.insert(8);
+    heap.insert(1);
+    heap.insert(23);
+    heap.insert(10);
+    heap.insert(4);
+    heap.insert(45);
+
+    cout << "Is it empty? " << heap.isEmpty() << endl;
+    cout << "Size: " << heap.getSize() << endl;
+
+    heap.printContents();
+
+    cout << "Max Value" << heap.getMax() << endl;
+
+    heap.printContents();
+
+    cout << "Max extract: " << heap.extractMax() << endl;
+
+    heap.printContents();
+
+    heap.remove(4);
+
+    heap.printContents();
+
+    int arr[] = {8, 20, 18, 3, 2, 21, 15, 6};
+
+   printArray(arr, 8);
+
+   heap.heapify(arr, 8);
+
+   printArray(arr, 8);
+
+   int arr2[] = {7, 26, 12, 19, 3, 8, 10, 20, 11};
+
+   heap.heapSort(arr2, 9);
+
+   printArray(arr2, 9);
+
+    int arr3[] = { 10, 28, 34, 17, 23, 9 };
+
+    SMMaxHeap heap2(arr3, 6);
+
+    heap2.printContents();
+
+    heap2.changePriority(2, 3);
+
+    heap2.printContents();
+
+    cout << "Max extract: " << heap2.extractMax() << endl;
+
+    heap2.printContents();
+
+    cout << "Max extract: " << heap2.extractMax() << endl;
+
+    heap2.printContents();
+
+    cout << "Max extract: " << heap2.extractMax() << endl;
+
+    heap2.printContents();
+
+    cout << "Max extract: " << heap2.extractMax() << endl;
+
+    heap2.printContents();
+}
+
 int main()
 {
-    testBinarySearchTree();
+    testMaxHeap();
 }
 
 
